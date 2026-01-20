@@ -1,21 +1,23 @@
-import Link from "next/link";
+// typescript
+import Link from "next/link"
 
-
-export default function Navbar() {
+export function Navbar() {
   return (
-    <nav className="bg-white shadow-sm px-6 py-4 flex justify-between">
-      <Link href="/" className="font-bold text-lg">
-        HousingFinder
-      </Link>
+    <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <Link href="/" className="text-lg font-semibold text-slate-900">
+          Student Housing Finder
+        </Link>
 
-      <div className="space-x-4">
-        <Link href="/" className="text-gray-600 hover:text-black">
-          Home
-        </Link>
-        <Link href="/favorites" className="text-gray-600 hover:text-black">
-          Favorites
-        </Link>
+        <nav className="flex items-center gap-4 text-sm">
+          <Link href="/" className="text-slate-700 hover:text-slate-900">
+            Listings
+          </Link>
+          <Link href="/favorites" className="text-slate-700 hover:text-slate-900">
+            Favorites
+          </Link>
+        </nav>
       </div>
-    </nav>
-  );
+    </header>
+  )
 }
