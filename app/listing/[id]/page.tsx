@@ -16,6 +16,9 @@ export default function ListingDetailsPage() {
 
   const fav = isFavorite(listing.id)
 
+  const hasPhotos = Array.isArray(listing.images) && listing.images.length > 0
+  const poster = listing.videoPoster || (hasPhotos ? listing.images[0] : "/listings/placeholder.jpg")
+
   return (
     <div className="space-y-5">
       <section className="rounded-xl border bg-white p-5">
@@ -46,20 +49,41 @@ export default function ListingDetailsPage() {
           ))}
         </div>
 
-        <p className="mt-5 text-base">
-          ₦{listing.pricePerMonth.toLocaleString()} / month
-        </p>
+        <p className="mt-5 text-base">₦{listing.pricePerMonth.toLocaleString()} / month</p>
       </section>
+
+      {listing.videoSrc ? (
+        <section className="rounded-xl border bg-white p-5">
+          <h2 className="text-sm font-semibold text-slate-900">Video tour</h2>
+
+          <div className="mt-3 overflow-hidden rounded-lg bg-slate-100">
+            <video controls preload="metadata" poster={poster} className="w-full">
+              <source src={listing.videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      ) : null}
 
       <section className="rounded-xl border bg-white p-5">
         <h2 className="text-sm font-semibold text-slate-900">Photos</h2>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {listing.images.map((src) => (
-            <div key={src} className="aspect-[16/10] overflow-hidden rounded-lg bg-slate-100">
-              <img src={src} alt={listing.title} className="h-full w-full object-cover" loading="lazy" />
-            </div>
-          ))}
-        </div>
+
+        {hasPhotos ? (
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {listing.images.map((src) => (
+              <div key={src} className="aspect-[16/10] overflow-hidden rounded-lg bg-slate-100">
+                <img
+                  src={src}
+                  alt={listing.title}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="mt-2 text-sm text-slate-700">No photos available for this listing.</p>
+        )}
       </section>
     </div>
   )

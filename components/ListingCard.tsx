@@ -1,28 +1,42 @@
-// typescript
 "use client"
 
 import Link from "next/link"
-import { Listing } from "@/data/listings"
+import { Listing } from "@/data/listings" 
 import { useFavorites } from "@/hooks/useFavorites"
 
 type Props = {
   listing: Listing
 }
 
+function getCardCover(listing: Listing) {
+  if (Array.isArray(listing.images) && listing.images.length > 0) return listing.images[0]
+  if (listing.videoPoster) return listing.videoPoster
+  return null
+}
+
 export function ListingCard({ listing }: Props) {
   const { isFavorite, toggleFavorite } = useFavorites()
   const fav = isFavorite(listing.id)
+  const cover = getCardCover(listing)
 
   return (
     <div className="overflow-hidden rounded-xl border bg-white">
       <Link href={`/listing/${listing.id}`} className="block">
-        <div className="aspect-[16/10] w-full bg-slate-100">
-          <img
-            src={listing.images[0]}
-            alt={listing.title}
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
+
+        <div className="relative aspect-[16/10] w-full bg-slate-100">
+          {cover ? (
+            <img src={cover} alt={listing.title} className="h-full w-full object-cover" loading="lazy" />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center text-sm bg-slate-600">
+              No cover image
+            </div>
+          )}
+
+          {listing.videoSrc ? (
+            <div className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 text-xs text-white">
+              Video tour
+            </div>
+          ) : null}
         </div>
       </Link>
 
@@ -48,9 +62,7 @@ export function ListingCard({ listing }: Props) {
         </div>
 
         <div className="mt-3 flex items-center justify-between">
-          <p className="text-sm text-slate-900">
-            ₦{listing.pricePerMonth.toLocaleString()} / month
-          </p>
+          <p className="text-sm text-slate-900">₦{listing.pricePerMonth.toLocaleString()} / month</p>
           <span className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-700">
             {listing.roomType}
           </span>
