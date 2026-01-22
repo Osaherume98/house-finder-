@@ -49,7 +49,12 @@ export default function ListingDetailsPage() {
           ))}
         </div>
 
-        <p className="mt-5 text-base">₦{listing.pricePerMonth.toLocaleString()} / month</p>
+        <p className="mt-5 text-base">
+          {listing.isSale || listing.price 
+            ? `₦${(listing.price || 0).toLocaleString()}`
+            : `₦${(listing.pricePerMonth || 0).toLocaleString()} / month`
+          }
+        </p>
       </section>
 
       {listing.videoSrc ? (

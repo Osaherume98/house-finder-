@@ -5,7 +5,9 @@ export type Listing = {
   title: string
   city: string
   area: string
-  pricePerMonth: number
+  price?: number
+  pricePerMonth?: number
+  isSale?: boolean
   roomType: string
   description: string
   amenities: string[]
@@ -37,7 +39,8 @@ export const LISTINGS = [
     title: "FOR SALE",
     city: "Lagos",
     area: "Bode Thomas, Surulere",
-    pricePerMonth: 330000000,
+    price: 330000000,
+    isSale: true,
     roomType: "4 Bedroom Terrace Duplex With BQ",
     description: "NEWLY BUILT FULLY FURNISHED 4-BEDROOM TERRACE DUPLEX WITH BQ",
     amenities: ["Fully Furnished", "Pop ceiling with Screeded walls", "chandelier fittings", "FItted Wardrobes", "Spacious Car Park"],

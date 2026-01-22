@@ -30,7 +30,9 @@ export default function HomePage() {
 
       const matchesCity = !city || l.city === city
       const matchesRoomType = !roomType || l.roomType === roomType
-      const matchesMaxPrice = max === null || (Number.isFinite(max) && l.pricePerMonth <= max)
+      const matchesMaxPrice = max === null || (Number.isFinite(max) && 
+        ((l.isSale || l.price) ? (l.price || 0) <= max : (l.pricePerMonth || 0) <= max)
+      ) 
 
       return matchesSearch && matchesCity && matchesRoomType && matchesMaxPrice
     })

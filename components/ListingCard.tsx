@@ -18,6 +18,8 @@ export function ListingCard({ listing }: Props) {
   const { isFavorite, toggleFavorite } = useFavorites()
   const fav = isFavorite(listing.id)
   const cover = getCardCover(listing)
+  
+
 
   return (
     <div className="overflow-hidden rounded-xl border bg-white">
@@ -62,7 +64,12 @@ export function ListingCard({ listing }: Props) {
         </div>
 
         <div className="mt-3 flex items-center justify-between">
-          <p className="text-sm text-slate-900">₦{listing.pricePerMonth.toLocaleString()} / month</p>
+          <p className="text-sm text-slate-900">
+            {listing.isSale || listing.price 
+              ? `₦${(listing.price || 0).toLocaleString()}`
+              : `₦${(listing.pricePerMonth || 0).toLocaleString()} / month`
+            }
+          </p>
           <span className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-700">
             {listing.roomType}
           </span>
