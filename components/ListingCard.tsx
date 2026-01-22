@@ -11,7 +11,7 @@ type Props = {
 function getCardCover(listing: Listing) {
   if (Array.isArray(listing.images) && listing.images.length > 0) return listing.images[0]
   if (listing.videoPoster) return listing.videoPoster
-  return null
+  return "/listings/placeholder.jpg"
 }
 
 export function ListingCard({ listing }: Props) {

@@ -24,7 +24,13 @@ export const LISTINGS = [
     roomType: "Studio Apartment",
     description: "Open-plan kitchen, 1 toilet & bath, POP ceiling, screeded walls, fitted kitchen.",
     amenities: ["ACs", "Wardrobes", "chandelier", "gas burner", "prepaid meter"],
-    images: ["/listings/os-01/cover.jpeg", "/listings/os-01/room.jpeg", "/listings/os-1/kitchen.jpeg", "/listings/os-1/bathroom.jpeg"],
+    images: [
+      "/listings/os-01/cover.jpeg",
+      "/listings/os-01/room.jpeg",
+      "/listings/os-01/kitchen.jpeg",
+      "/listings/os-01/bathroom.jpeg",
+    ],
+    
   },
   {
     id: "os-02",
@@ -37,7 +43,7 @@ export const LISTINGS = [
     amenities: ["Fully Furnished", "Pop ceiling with Screeded walls", "chandelier fittings", "FItted Wardrobes", "Spacious Car Park"],
     images: [],
     videoSrc: "/listings/os-02/video/placeholder.mp4",
-    videoPoster: "/listings/placeholder.jpg",
+    videoPoster: "/listings/os-02/video-cover.jpg",
 
   },
 ]
