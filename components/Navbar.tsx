@@ -8,7 +8,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center space-x-3">
           <HomeIcon className="w-10  h-10 text-gray-800" />  
           <span className="text-lg font-semibold text-slate-900">
-            Student Housing Finder
+            OS Housing Finder
           </span>
         </Link>
 

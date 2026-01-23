@@ -41,7 +41,7 @@ export default function HomePage() {
   return (
     <div className="space-y-5">
       <section className="rounded-xl border bg-white p-5">
-        <h1 className="text-xl font-semibold">Find student housing</h1>
+        <h1 className="text-xl font-semibold">Find housing</h1>
         <p className="mt-1 text-sm text-slate-600">
           Browse listings, filter by what you can afford, and save your favorites.
         </p>
