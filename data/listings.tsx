@@ -56,7 +56,7 @@ export const LISTINGS = [
     title: "TO-LET",
     city: "Lagos",
     area: "Alagomeji, Yaba",
-    pricePerMonth: 1500000,
+    pricePerMonth: 1500000 ,
     roomType: "Room Self-Contain",
     description: "NEWLY BUILT Room Self-Contain FULLY FURNISHED",
     amenities: ["Fully Furnished", "Pop ceiling with Screeded walls", "Personal Prepaid Meter",],
