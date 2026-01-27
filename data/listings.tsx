@@ -64,5 +64,18 @@ export const LISTINGS = [
     videoSrc: "/listings/os-03/video/placeholder.mp4",
     videoPoster: "/listings/os-03/video-cover .jpg",
   },
+  {
+    id: "os-04",
+    title: "TO-LET",
+    city: "Lagos",
+    area: "Alagomeji, Yaba",
+    pricePerMonth: 1500000 ,
+    roomType: "Room Self-Contain",
+    description: "NEWLY BUILT Room Self-Contain FULLY FURNISHED",
+    amenities: ["Fully Furnished", "Pop ceiling with Screeded walls", "Personal Prepaid Meter",],
+    images: [],
+    videoSrc: "/listings/os-04/video/video.mp4",
+    videoPoster: "/listings/os-04/video-cover.jpg",
+  },
 ]
 

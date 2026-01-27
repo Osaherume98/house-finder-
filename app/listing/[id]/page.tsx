@@ -52,7 +52,7 @@ export default function ListingDetailsPage() {
         <p className="mt-5 text-base">
           {listing.isSale || listing.price 
             ? `₦${(listing.price || 0).toLocaleString()}`
-            : `₦${(listing.pricePerMonth || 0).toLocaleString()} / month`
+            : `₦${(listing.pricePerMonth || 0).toLocaleString()} / month`            
           }
         </p>
       </section>
