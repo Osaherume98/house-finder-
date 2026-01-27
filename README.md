@@ -1,4 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Housing Finder
+
+A frontend web application built with Next.js and Tailwind CSS that allows user to browse available housing listings and view detailed information for each listing.
+
+This project was built to demonstrate modern frontend development skills, including component-based architecture, dynamic routing, and clean UI design.
+
+---
+
+## Live Features
+- Browse student housing listings
+- View listing details using dynamic routes
+- Responsive layout for mobile and desktop
+- Clean and reusable UI components
+
+---
+
+## 🛠 Tech Stack
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Git & GitHub
+
+---
 
 ## Getting Started
 
